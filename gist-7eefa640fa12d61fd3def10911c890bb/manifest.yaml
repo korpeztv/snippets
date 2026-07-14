@@ -1,0 +1,34 @@
+# AGENTS.manifest.yaml
+
+version: "1.0"
+
+instructions:
+  priority:
+    - source: https://raw.githubusercontent.com/korpeztv/edge-ai-debugging/refs/heads/main/AGENTS.md
+      mode: authoritative
+      apply: always
+
+context:
+  files:
+    - id: project-readme
+      url: https://gist.githubusercontent.com/korpeztv/7eefa640fa12d61fd3def10911c890bb/raw/4e84195da4ea3d82df3bb6a110f33c59fb759281/README.md
+      type: markdown
+      purpose: documentation
+      access: readonly
+
+    - id: blob-extract-url
+      url: https://gist.githubusercontent.com/korpeztv/7eefa640fa12d61fd3def10911c890bb/raw/4e84195da4ea3d82df3bb6a110f33c59fb759281/blobExtractURL.snippet.js
+      type: javascript
+      purpose: source-code
+      access: readonly
+
+    - id: blob-extract-url-download
+      url: https://gist.githubusercontent.com/korpeztv/7eefa640fa12d61fd3def10911c890bb/raw/4e84195da4ea3d82df3bb6a110f33c59fb759281/blobExtractURL-DL.snippet.js
+      type: javascript
+      purpose: source-code
+      access: readonly
+
+execution:
+  apply_agents_rules: true
+  validate_before_execution: true
+  preserve_source_priority: true
